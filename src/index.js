@@ -87,7 +87,7 @@ export const useStyles = (ref, styles, breakpoints = [36, 48, 54, 68]) => {
   return Object.assign({}, elementStyles, hoverStyles)
 }
 
-export default ({ as = 'div', styles, ...props }) => {
+export default ({ as = 'div', styles }) => props => {
   const ref = useRef()
   const style = useStyles(ref, styles)
   return React.createElement(as, { ...props, ref, style })
