@@ -14,6 +14,8 @@ If we were to get really weird, we could potentially perform analysis on apps us
 
 ## Goals
 
+Add some type of generator usage so we can do something like `styled({ as: 'h1, fontSize: [12, 16, 20, 24] })`.
+
 Firstly, I'd like to continue working on this project and measuring the performance to see how it affects performance in the browser and overall bundle sizes.
 
 Natively tie into styled-system.
