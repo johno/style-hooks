@@ -1,0 +1,28 @@
+{
+  "name": "style-hooks",
+  "description": "Pure JS styles using React Hooks",
+  "version": "0.0.0",
+  "author": "John Otander",
+  "repository": "johno/style-hooks",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "css",
+    "css-in-js",
+    "hooks"
+  ],
+  "main": "dist",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "format": "prettier src/**/*.js --write --no-semi --single-quote"
+  },
+  "devDependencies": {
+    "@compositor/x0": "^6.0.7",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
+  }
+}
