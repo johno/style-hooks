@@ -26,7 +26,28 @@ npm i -S style-hooks react@next react-dom@next
 
 ## Usage
 
+```jsx
+import Styled from 'style-hooks'
 
+const Input = props => {
+  return (
+    <Styled
+      {...props}
+      as='input'
+      style={{
+        border: 'thin solid gray',
+        focus: {
+          border: 'thin solid blue',
+          outline: 'none'
+        },
+        hover: {
+          boxShadow: '0 5px 10px rgba(0, 0, 0, .5)'
+        }
+      }}
+    />
+  )
+}
+```
 
 ## Related
 
