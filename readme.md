@@ -7,10 +7,8 @@ Please don't use this in production, styled-components and emotion are much bett
 
 ## Why?
 
-I've been pondering a lighter-weight CSS-in-JS for a while, when I saw Hooks announced it seemed like a nice new API to give something new a try.
+I've been pondering a lighter-weight CSS-in-JS for a while, when I saw Hooks announced it seemed like a nice new API to give it a try.
 This is intended as a project to learn how Hooks work while scratching an itch regarding some of my dissatisfaction with existing CSS-in-JS solutions.
-
-If we were to get really weird, we could potentially perform analysis on apps using this API at compile time and generate static CSS for components.
 
 ## Goals
 

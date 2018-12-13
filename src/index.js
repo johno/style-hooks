@@ -21,6 +21,31 @@ export const useMedia = query => {
   return matches
 }
 
+const useFocusStyles = (ref, focusStyles = {}) => {
+  const [isFocused, setFocused] = useState(false)
+
+  useEffect(() => {
+    const focusInListener = ref.current.addEventListener('focusin', () => {
+      if (!isFocused) {
+        setFocused(true)
+      }
+    })
+
+    const focusOutListener = ref.current.addEventListener('focusout', () => {
+      if (isFocused) {
+        setFocused(false)
+      }
+    })
+
+    return () => {
+      ref.current.removeEventListener('focusin', focusInListener)
+      ref.current.removeEventListener('focusout', focusOutListener)
+    }
+  })
+
+  return isFocused ? focusStyles : {}
+}
+
 export const useHoverStyles = (ref, hoverStyles = {}) => {
   const [isHovering, setHovering] = useState(false)
 
@@ -59,6 +84,7 @@ export const useStyles = (ref, styles, breakpoints = [36, 48, 54, 68]) => {
   const xl = useMedia(toMediaQuery(breakpoints[3]))
 
   const hoverStyles = useHoverStyles(ref, styles.hover)
+  const focusStyles = useFocusStyles(ref, styles.focus)
 
   const elementStyles = Object.entries(styles).reduce(
     (acc, [property, val]) => {
@@ -84,5 +110,5 @@ export const useStyles = (ref, styles, breakpoints = [36, 48, 54, 68]) => {
     {}
   )
 
-  return Object.assign({}, elementStyles, hoverStyles)
+  return Object.assign({}, elementStyles, hoverStyles, focusStyles)
 }
